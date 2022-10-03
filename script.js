@@ -20,25 +20,43 @@ makeRow()
 const AddButton = document.getElementById('add-row')
 AddButton.addEventListener('click', makeRow)
 
-const color = 'greenyellow'
-change.addEventListener('change', function (event) {
-    color = event.target.value
-})
-
 table.addEventListener('click', colorize)
+// td.className = 'greenyellow'
+
 function colorize (event) {
     const target = event.target
     if (target.className.length) {
         target.className = ''
     } else {
-        target.className = color
+        target.className = chosenColor
     }
 }
 
-const change = document.getElementsByTagName('select')
-change.addEventListener('click', function (event) {
-    console.log(event.target.value)
+let chosenColor = 'greenyellow'
+
+const select = document.getElementsByTagName('select')[0]
+select.addEventListener('change', function (event) {
+    chosenColor = event.target.value
 })
+
+// function colorize (event) {
+//     const target = event.target
+//     if (target.className.length) {
+//         target.className = ''
+//     } else {
+//         target.className = chosenColor
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
 
 
 
